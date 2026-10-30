@@ -1,26 +1,13 @@
-LAB PROGRAM 12 - ER DIAGRAM CHECKLIST
-
-Student Entity: YES
-Course Entity: YES
-Faculty Entity: YES
-Department Entity: YES
-
-Student Primary Key: StudentID
-Course Primary Key: CourseID
-Faculty Primary Key: FacultyID
-Department Primary Key: DepartmentID
-
-Department-Student Relationship: YES
-Department-Student Cardinality: 1:N
-
-Faculty-Course Relationship: YES
-Faculty-Course Cardinality: 1:N
-
-Student-Course Relationship: YES
-Student-Course Cardinality: M:N
-
-Associative Entity for Student-Course: Enrollment
-
-One-to-One Relationship: NOT REQUIRED
-
-Visual Diagram Created in MySQL Workbench: YES
+USE CollegeDB;
+DROP PROCEDURE IF EXISTS CalculateSum;
+DELIMITER //
+CREATE PROCEDURE CalculateSum()
+BEGIN
+DECLARE num1 INT DEFAULT 10;
+DECLARE num2 INT DEFAULT 20;
+DECLARE total INT;
+SET total = num1 + num2;
+SELECT total AS Sum;
+END //
+DELIMITER ;
+CALL CalculateSum();
